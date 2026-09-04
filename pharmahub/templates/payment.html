@@ -1,0 +1,34 @@
+<h1>Complete Payment</h1>
+
+<button id="pay-btn">Pay Now</button>
+
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+<script>
+
+var options = {
+
+"key": "{{ razorpay_key }}",
+
+"amount": "{{ amount }}",
+
+"currency": "INR",
+
+"name": "PharmaHub",
+
+"order_id": "{{ order_id }}",
+
+"handler": function (response){
+alert("Payment Successful 🎉");
+}
+
+};
+
+var rzp = new Razorpay(options);
+
+document.getElementById('pay-btn').onclick = function(e){
+rzp.open();
+e.preventDefault();
+}
+
+</script>

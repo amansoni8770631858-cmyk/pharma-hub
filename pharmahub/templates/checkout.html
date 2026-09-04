@@ -1,0 +1,25 @@
+<h1>Checkout</h1>
+
+<h2>Total Amount: ₹{{ total }}</h2>
+<form method="POST">
+{% csrf_token %}
+
+<label>Name:</label><br>
+<input type="text" name="name"><br><br>
+
+<label>Address:</label><br>
+<textarea name="address"></textarea><br><br>
+
+<label>Phone:</label><br>
+<input type="text" name="phone"><br><br>
+
+<button type="submit">Place Order</button>
+
+</form>
+<h3>Pay with UPI</h3>
+
+<a href="upi://pay?pa=aman-soni01@ptyes&pn=PharmaHub&am=20&cu=INR">
+<button style="padding:10px 20px;background:green;color:white;border:none;border-radius:5px;">
+Pay with Google Pay / PhonePe
+</button>
+</a>
